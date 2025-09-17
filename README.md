@@ -1,7 +1,7 @@
 # Kalendarz Szkolny
 
 ## Cel
-Aplikacja ma służyć jako osobisty kalendarz szkolny. Umożliwia zapisywanie terminów kartkówek oraz sprawdzianów.  
+Strona ma służyć jako osobisty kalendarz szkolny. Umożliwia zapisywanie terminów kartkówek oraz sprawdzianów.  
 
 ## Zasada działania
 Strona internetowa dostępna w przeglądarce. Użytkownik może dodawać wydarzenia do kalendarza, edytować je lub usuwać. Wszystkie dane zapisywane są lokalnie w pamięci przeglądarki (localStorage).
