@@ -1,0 +1,178 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, sans-serif;
+}
+
+:root {
+	--bg: #ffffff;
+	--text: #000000;
+	--card-bg: #f2f2f2;
+	--accent: #0055ff;
+	--input-bg: #ffffff;
+	--border: #cccccc;
+}
+
+.dark-theme {
+	--bg: #111111;
+	--text: #e0e0e0;
+	--card-bg: #1b1b1b;
+	--accent: #66aaff;
+	--input-bg: #161616;
+	--border: #333333;
+}
+
+/* ROOT LAYOUT — FIXED */
+html, body {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden; /* no page scrolling */
+	background-color: var(--bg);
+	color: var(--text);
+	font-size: 14px;
+	transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* MAIN CONTENT — FLEX COLUMN */
+.MainPage {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 10px;
+	overflow: hidden; /* main container manages overflow */
+	width: 100%;
+}
+
+/* HEADER */
+#TopOfThePage {
+	padding: 10px;
+	background-color: var(--card-bg);
+	border-radius: 6px;
+	text-align: center;
+	border: 1px solid var(--border);
+}
+
+/* BUTTONS */
+#ThemeSwitch {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 30px;
+	height: 30px;
+	background-color: var(--accent);
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+#HomeButton {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 60px;
+	height: 35px;
+	border: none;
+	border-radius: 6px;
+	background-color: var(--accent);
+	color: #fff;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+/* ADD EVENT PANEL */
+.AddEvent {
+	padding: 10px;
+	background-color: var(--card-bg);
+	border-radius: 6px;
+	border: 1px solid var(--border);
+	overflow: auto;
+	flex-shrink: 0;
+}
+
+#AddEventAction {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-top: 10px;
+}
+
+label,
+select,
+input,
+textarea,
+button {
+	font-size: 14px;
+}
+
+select,
+input,
+textarea {
+	padding: 6px;
+	background-color: var(--input-bg);
+	color: var(--text);
+	border: 1px solid var(--border);
+	border-radius: 6px;
+	transition: background 0.3s ease, color 0.3s ease;
+}
+
+textarea {
+	resize: vertical;
+	min-height: 60px;
+}
+
+#saveEventBtn {
+	padding: 6px;
+	background-color: var(--accent);
+	color: white;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+/* EVENT LIST — THE ONLY SCROLLABLE AREA */
+#CheckCalendar {
+	flex: 1;
+	overflow-y: auto;
+	margin-top: 10px;
+}
+
+#CheckCalendar .event {
+	padding: 6px;
+	margin-bottom: 6px;
+	background-color: var(--card-bg);
+	border-radius: 6px;
+	border: 1px solid var(--border);
+}
+
+/* DELETE BUTTON */
+.event {
+	position: relative;
+}
+
+.deleteEventBtn {
+	position: absolute;
+	top: 6px;
+	right: 6px;
+	background: transparent;
+	border: none;
+	font-size: 18px;
+	cursor: pointer;
+	color: #c00;
+	font-weight: bold;
+}
+
+.deleteEventBtn:hover {
+	color: #900;
+}
+
+/* FOOTER — FIXED AT BOTTOM */
+footer {
+	padding: 10px;
+	border-top: 1px solid var(--border);
+	text-align: center;
+	background-color: var(--card-bg);
+	flex-shrink: 0; /* prevents shrinking → keeps footer at bottom */
+}

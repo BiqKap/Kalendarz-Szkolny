@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Kalendarz Szkolny</title>
+		<link rel="stylesheet" href="Calendar.css" />
+		<script src="Calendar.js" defer></script>
+	</head>
+	<body>
+		<div class="MainPage">
+			<button id="HomeButton">Powrót</button>
+			<button id="ThemeSwitch"></button>
+			<h1>Kalendarz Szkolny</h1>
+			<div id="CalendarDisplay"></div>
+		</div>
+
+		<footer id="BottomOfThePage">
+			<div id="FooterAddEvent">
+				<p>&copy; Kalendarz Szkolny. Wszelkie prawa zastrzeżone.</p>
+			</div>
+		</footer>
+
+		<div id="EventModal" class="modal">
+			<div class="modal-content">
+				<span id="CloseModal" class="close">&times;</span>
+				<h2 id="ModalTitle"></h2>
+				<p id="ModalDate"></p>
+				<p id="ModalTime"></p>
+				<p id="ModalDescription"></p>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Wydarzenia Szkolne</title>
+		<link rel="stylesheet" href="Event-style.css" />
+		<script src="Event-script.js" defer></script>
+	</head>
+	<body>
+		<div class="MainPage">
+			<button id="HomeButton">Powrót</button>
+			<button id="ThemeSwitch"></button>
+
+			<header id="TopOfThePage">
+				<h1>Kalendarz Szkolny</h1>
+			</header>
+
+			<div class="AddEvent">
+				<div id="HelpAddEvent">
+					<h1>Dodaj wydarzenie</h1>
+				</div>
+
+				<div id="AddEventAction">
+					<label for="eventType">Rodzaj wydarzenia:</label>
+					<select id="eventType">
+						<option value="Kartkówka">Kartkówka</option>
+						<option value="Sprawdzian">Sprawdzian</option>
+						<option value="Praca domowa">Praca domowa</option>
+						<option value="Inne">Inne</option>
+					</select>
+
+					<label for="eventDate">Data:</label>
+					<input type="date" id="eventDate" />
+
+					<label for="lessonHour">Godzina lekcyjna:</label>
+					<select id="lessonHour">
+						<option value="">Brak</option>
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+					</select>
+
+					<label for="eventDescription">Opis:</label>
+					<textarea id="eventDescription"></textarea>
+
+					<button id="saveEventBtn">Zapisz wydarzenie</button>
+				</div>
+			</div>
+
+			<div id="CheckCalendar"></div>
+
+			<footer id="BottomOfThePage">
+				<div id="FooterAddEvent">
+					<p>&copy; Kalendarz Szkolny. Wszelkie prawa zastrzeżone.</p>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
