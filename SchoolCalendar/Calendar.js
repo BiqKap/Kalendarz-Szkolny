@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			html += `<div class="calendar-cell"><div class="day-number">${d}</div>`;
 
 			dayEvents.forEach((ev) => {
-				const globalIndex = events.indexOf(ev); // <-- use the main array index
+				const globalIndex = events.indexOf(ev); 
 				html += `<div class="event-block"
                 data-index="${globalIndex}"
                 style="
@@ -118,5 +118,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const homeBtn = document.getElementById("HomeButton");
 homeBtn.addEventListener("click", () => {
-	window.location.href = "Main-page.html"; // replace with your home page URL
+	window.location.href = "Main-page.html"; 
 });
