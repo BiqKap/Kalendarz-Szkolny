@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			.map(
 				(e, index) => `
             <div class="event">
-                <button class="deleteEventBtn" data-index="${index + 1}">✕</button>
+                <button class="deleteEventBtn" data-index="${index}">✕</button>
                 <h3>${e.title}</h3>
                 <p>${e.date} ${e.time ? "– godzina lekcyjna " + e.time : ""}</p>
                 <p>${e.desc}</p>
