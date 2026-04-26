@@ -29,17 +29,18 @@ document.addEventListener("DOMContentLoaded", () => {
 		eventsContainer.innerHTML = events
 			.map(
 				(e, index) => `
-			<div class="event">
-				<button class="deleteEventBtn" data-index="${index}">✕</button>
-				<h3>${e.title}${e.subject ? " – " + e.subject : ""}</h3>
-				<p>${e.date}${e.time ? " – godzina lekcyjna " + e.time : ""}</p>
-				${e.desc ? `<p>${e.desc}</p>` : ""}
-			</div>
-		`,
+            <div class="event">
+                <button class="deleteEventBtn" data-index="${index}">✕</button>
+                <h3>${e.title}</h3>
+                <p>${e.date} ${e.time ? "– godzina lekcyjna " + e.time : ""}</p>
+                <p>${e.desc}</p>
+            </div>
+        `,
 			)
 			.join("");
 
-		document.querySelectorAll(".deleteEventBtn").forEach((btn) => {
+		const deleteButtons = document.querySelectorAll(".deleteEventBtn");
+		deleteButtons.forEach((btn) => {
 			btn.addEventListener("click", (ev) => {
 				const idx = ev.target.getAttribute("data-index");
 				let events = JSON.parse(localStorage.getItem("schoolEvents") || "[]");
@@ -52,7 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	btnSave.addEventListener("click", () => {
 		const title = document.getElementById("eventType").value;
-		const subject = document.getElementById("eventSubject").value.trim();
 		const time = document.getElementById("lessonHour").value;
 		const date = document.getElementById("eventDate").value;
 		const desc = document.getElementById("eventDescription").value.trim();
@@ -62,12 +62,11 @@ document.addEventListener("DOMContentLoaded", () => {
 			return;
 		}
 
-		const newEvent = { title, subject, date, time, desc };
+		const newEvent = { title, date, time, desc };
 		let events = JSON.parse(localStorage.getItem("schoolEvents") || "[]");
 		events.push(newEvent);
 		localStorage.setItem("schoolEvents", JSON.stringify(events));
 
-		document.getElementById("eventSubject").value = "";
 		document.getElementById("eventDate").value = "";
 		document.getElementById("lessonHour").value = "";
 		document.getElementById("eventDescription").value = "";

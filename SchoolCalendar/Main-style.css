@@ -32,7 +32,6 @@ body {
 	justify-content: center;
 }
 #ThemeSwitch {
-	/* późniejsze zmienianie na ciemny motyw w JS */
 	position: absolute;
 	top: 16px;
 	right: 16px;

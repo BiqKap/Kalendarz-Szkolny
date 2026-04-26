@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const typeColors = {
 		light: {
 			Kartkówka: "#ff9999",
+			Sprawdzian: "#99ccff",
 			"Praca domowa": "#99ff99",
 			Inne: "#cccccc",
 		},
@@ -62,9 +63,12 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 
 			for (let d = 1; d <= daysInMonth; d++) {
-				const dateStr = `${year}-${String(month + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+				const dateStr = `${year}-${String(month + 1).padStart(2, "0")}-${String(
+					d
+				).padStart(2, "0")}`;
 				const dayEvents = events.filter((e) => e.date === dateStr);
 
+				// Highlight today
 				const isToday =
 					offset === 0 &&
 					d === today.getDate() &&
@@ -75,16 +79,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 				dayEvents.forEach((ev) => {
 					const globalIndex = events.indexOf(ev);
-					const label = ev.subject
-						? `${ev.title} – ${ev.subject}`
-						: ev.title;
 					fullHtml += `<div class="event-block"
 						data-index="${globalIndex}"
 						style="
 							background-color:${typeColors[theme][ev.title] || "#eee"};
 							color:${theme === "dark" ? "#e0e0e0" : "#000"};
 						">
-						${label}${ev.time ? " · l." + ev.time : ""}
+						${ev.title}${ev.time ? " – lekcja " + ev.time : ""}
 					</div>`;
 				});
 
@@ -102,7 +103,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		const modal = document.getElementById("EventModal");
 		const closeBtn = document.getElementById("CloseModal");
 		const titleEl = document.getElementById("ModalTitle");
-		const subjectEl = document.getElementById("ModalSubject");
 		const dateEl = document.getElementById("ModalDate");
 		const timeEl = document.getElementById("ModalTime");
 		const descEl = document.getElementById("ModalDescription");
@@ -113,10 +113,9 @@ document.addEventListener("DOMContentLoaded", () => {
 				const ev = events[index];
 
 				titleEl.textContent = ev.title;
-				subjectEl.textContent = ev.subject ? `Przedmiot: ${ev.subject}` : "";
 				dateEl.textContent = `Data: ${ev.date}`;
 				timeEl.textContent = ev.time ? `Godzina lekcyjna: ${ev.time}` : "";
-				descEl.textContent = ev.desc || ev.description || "";
+				descEl.textContent = ev.description || "";
 
 				modal.style.display = "flex";
 			});
