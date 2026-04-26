@@ -12,3 +12,7 @@ Strona internetowa dostępna w przeglądarce. Użytkownik może dodawać wydarze
 - Użytkownik może zmieniać motyw strony i dostosowywać kolory interfejsu według własnych preferencji;
 - Kalkulator umożliwiający obliczanie średniej ocen;
 - Prosty poradnik w rogu każdej strony pomagający w obsłudze storny.
+
+## Testy weryfikacji aplikacji (26.04.2026)
+- Przeprowadzono testy manualne – wszystkie przypadki zaliczone
+- Przeprowadzono testy jednostkowe – 3/3 passed
